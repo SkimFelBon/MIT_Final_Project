@@ -1,0 +1,7 @@
+REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
+pizzatest1                 latest              c978fcb24786        2 months ago        662MB
+cs50/ide                   latest              21e32fc9737e        14 months ago       4.57GB
+
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS                  NAMES
+fb31e68f94fe        cs50/ide            "bash --login -c 'no…"   8 weeks ago         Exited (137) 41 hours ago                          ide50
+4597ae8c2f88        pizzatest1          "python3 application…"   2 months ago        Exited (255) 18 hours ago   0.0.0.0:4000->80/tcp   pizza_v1
