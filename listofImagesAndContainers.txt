@@ -7,3 +7,9 @@ fb31e68f94fe        cs50/ide            "bash --login -c 'no…"   8 weeks ago  
 4597ae8c2f88        pizzatest1          "python3 application…"   2 months ago        Exited (255) 18 hours ago   0.0.0.0:4000->80/tcp   pizza_v1
 
 https://www.fir3net.com/Containers/Docker/the-essential-guide-in-transporting-your-docker-containers.html
+
+PS C:\Users\Bang> docker export fb31e68f94fe -o ide50-container.tar
+PS C:\Users\Bang> docker export 4597ae8c2f88 -o pizzatest1-container.tar
+
+PS C:\Users\Bang> docker save -o cs50-image.tar cs50/ide
+PS C:\Users\Bang> docker save -o pizzatest1-image.tar pizzatest1
