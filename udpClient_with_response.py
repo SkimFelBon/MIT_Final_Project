@@ -1,8 +1,14 @@
-import socket
+import socket, json
 
 # msgFromClient = "Hello UDP Server"
 # bytesToSend = str.encode(msgFromClient)
-serverAddressPort = ("127.0.0.1", 8000)
+
+with open('config.json') as json_data_file:
+        data = json.load(json_data_file)
+myIP = data['myServer']['PPPoeIP']
+myPort = int(data['myServer']['localPort'])
+
+serverAddressPort = (myIP, myPort)
 bufferSize = 1024
 
 # Create a UDP socket at client side

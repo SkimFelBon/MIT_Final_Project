@@ -6,3 +6,5 @@ pltENV/
 
 # ignore a file type
 *.bak
+*.json
+*.db

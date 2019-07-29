@@ -1,0 +1,146 @@
+PS C:\MyPythonScripts\myGitHub\Winter> python udpServerV4.py
+UDP server up and listening
+Message from Client:b'Line 0: 2019:02:26->> 14:14:55:    0:00:09   31   34   36   32   29   32\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'Line 1: 2019:02:26->> 14:15:05:    0:00:19   33   31   30   28   29   27\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'Line 2: 2019:02:26->> 14:15:15:    0:00:30   26   23   22   26   27   24\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'Line 3: 2019:02:26->> 14:15:25:    0:00:40   23   25   24   20   18   17\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'Line 4: 2019:02:26->> 14:15:35:    0:00:50   18   18   17   15   17   19\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'Line 5: 2019:02:26->> 14:15:45:    0:01:00   21   31   41   42   39   37\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'Line 6: 2019:02:26->> 14:15:55:    0:01:10   37   34   35   35   37   43\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'Line 7: 2019:02:26->> 14:16:05:    0:01:20   45   40   40   37   31   29\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'Line 8: 2019:02:26->> 14:16:15:    0:01:30   29   25   22   28   35   32\n'
+Client IP Address:('91.204.85.6', 63099)
+Message from Client:b'SNDT\x00\x00\x00\t\x05\x00\x04\x00\x04\x00\x04\x00\x05\x00\x06\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x00\x14\x06\x00\x06\x00\x05\x00\x05\x00\x05\x00\x05\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x00\x1e\x04\x00\x05\x00\x04\x00\x05\x00\x05\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x00(\x08\x00\x08\x00\x08\x00\x08\x00\x07\x00\x06\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x002\x06\x00\x06\x00\x05\x00\x06\x00\x07\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x01\x00\x08\x00\t\x00\n\x00\n\x00\x0b\x00\x0b\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x01\n\x0b\x00\n\x00\t\x00\t\x00\t\x00\x08\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x01\x14\x08\x00\x08\x00\x08\x00\x08\x00\x08\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x01\x1e\x07\x00\x07\x00\x06\x00\x06\x00\x06\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x01(\n\x00\r\x00\x0e\x00\x10\x00\x11\x00\x10\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x012\x0e\x00\x0e\x00\r\x00\x0c\x00\x0b\x00\n\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x02\x00\t\x00\t\x00\x08\x00\t\x00\x08\x00\x08\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x02\n\x08\x00\x08\x00\x08\x00\t\x00\x08\x00\x08\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x02\x14\x08\x00\x08\x00\x07\x00\x07\x00\x06\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x02\x1e\x07\x00\x08\x00\t\x00\x08\x00\t\x00\x0b\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x02(\x0b\x00\n\x00\n\x00\t\x00\t\x00\n\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x022\n\x00\x0b\x00\x0c\x00\r\x00\r\x00\x0c\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x03\x00\x0c\x00\x0b\x00\n\x00\t\x00\x08\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x03\n\x07\x00\x07\x00\x06\x00\x06\x00\x06\x00\x05\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x03\x14\x05\x00\x05\x00\x04\x00\x04\x00\x05\x00\x04\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x03\x1e\x04\x00\x04\x00\x04\x00\x04\x00\x04\x00\x03\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x03(\x03\x00\x03\x00\x03\x00\x03\x00\x03\x00\x03\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x032\x03\x00\x03\x00\x02\x00\x03\x00\x02\x00\x02\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x04\x00\x02\x00\x03\x00\x02\x00\x02\x00\x02\x00\x02\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x04\n\x02\x00\x01\x00\x02\x00\x01\x00\x01\x00\x01\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x04\x14\x01\x00\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x04\x1e\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x01\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x04(\x02\x00\x02\x00\x02\x00\x03\x00\x03\x00\x04\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x042\x05\x00\x05\x00\x04\x00\x05\x00\x05\x00\x05\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x05\x00\x05\x00\x05\x00\x04\x00\x05\x00\x05\x00\x05\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x05\x0b\x05\x00\x05\x00\x04\x00\x04\x00\x04\x00\x04\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x05\x15\x04\x00\x04\x00\x04\x00\x04\x00\x05\x00\x05\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x05\x1f\x05\x00\x05\x00\x05\x00\x05\x00\x05\x00\x05\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x05)\x05\x00\x05\x00\x06\x00\x06\x00\x06\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x053\t\x00\n\x00\x0b\x00\x0c\x00\x0c\x00\x0c\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x06\x01\r\x00\r\x00\x0c\x00\x0c\x00\x0c\x00\x0c\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x06\x0b\x0c\x00\x0c\x00\x0b\x00\n\x00\t\x00\t\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x06\x15\x08\x00\t\x00\x08\x00\x07\x00\x07\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x06\x1f\x07\x00\t\x00\t\x00\n\x00\n\x00\x0b\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x06)\n\x00\x0b\x00\x0b\x00\x0b\x00\n\x00\x0b\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x063\n\x00\x0b\x00\x0c\x00\x0f\x00\x0f\x00\x0f\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x07\x01\x10\x00\x10\x00\x0e\x00\r\x00\x0c\x00\x0b\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x07\x0b\x0b\x00\n\x00\n\x00\t\x00\n\x00\t\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x07\x15\n\x00\t\x00\t\x00\n\x00\n\x00\n\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x07\x1f\t\x00\t\x00\t\x00\t\x00\t\x00\t\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x07)\t\x00\t\x00\t\x00\t\x00\t\x00\t\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x073\n\x00\x0b\x00\r\x00\r\x00\r\x00\x0e\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x08\x01\x10\x00\x11\x00\x11\x00\x12\x00\x10\x00\x10\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x08\x0b\x0f\x00\x0e\x00\x0c\x00\x0c\x00\x0e\x00\x0f\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x08\x15\x0f\x00\x0f\x00\x0e\x00\r\x00\r\x00\x0e\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x08\x1f\r\x00\r\x00\x0c\x00\x0c\x00\x0b\x00\x0b\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x08)\n\x00\n\x00\n\x00\n\x00\t\x00\t\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\x083\x08\x00\x08\x00\x07\x00\x07\x00\x07\x00\x06\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\t\x01\x06\x00\x06\x00\x07\x00\x07\x00\x07\x00\x06\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\t\x0b\x07\x00\t\x00\n\x00\n\x00\n\x00\t\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\t\x15\t\x00\x07\x00\x07\x00\x07\x00\x08\x00\x08\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\t\x1f\t\x00\t\x00\t\x00\t\x00\n\x00\t\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\t)\t\x00\t\x00\x08\x00\n\x00\t\x00\t\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\t4\t\x00\x08\x00\x08\x00\x08\x00\x08\x00\x08\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\n\x02\t\x00\t\x00\t\x00\x08\x00\x08\x00\x07\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\n\x0c\x08\x00\t\x00\x0b\x00\x0c\x00\x0c\x00\x0c\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\n\x16\x0c\x00\x0c\x00\x0c\x00\x0c\x00\x0b\x00\x0b\x00'
+Client IP Address:('91.204.85.19', 14000)
+Message from Client:b'SNDT\x00\x00\n \n\x00\n\x00\n\x00\n\x00\n\x00\n\x00'
+Client IP Address:('91.204.85.19', 14000)

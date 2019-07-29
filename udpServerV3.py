@@ -1,8 +1,12 @@
-# udpServer.py
-import socket
+# udpServerV3.py
+import socket, json
 
-localIP = "127.0.0.1"
-localPort = 8000
+"""This example send reply to client"""
+
+with open('config.json') as json_data_file:
+        data = json.load(json_data_file)
+localIP = data['myServer']['PPPoeIP']
+localPort = int(data['myServer']['localPort'])
 bufferSize = 1024
 
 msgFromServer = "Hello UDP Client"
@@ -24,12 +28,10 @@ try:
         address = bytesAddressPair[1]
         clientMsg = "Message from Client:{}".format(message)
         clientIP = "Client IP Address:{}".format(address)
-
         print(clientMsg)
         print(clientIP)
         # Sending a reply to client
         UDPServerSocket.sendto(bytesToSend, address)
-        break
 finally:
     UDPServerSocket.close()
 
