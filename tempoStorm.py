@@ -20,3 +20,12 @@ with open(filepath) as fp:
 # bytesToSend = fileObj.readline()
 # print(str.encode(bytesToSend))
 #bytesToSend = str.encode(f"Line {i}: {line}")
+
+def writeToFile(response):
+    with open('responseNew.txt','a') as txt_data_file:
+        txt_data_file.write(response)
+    with open('responseByte','a') as byte_data_file:
+        byte_data_file.write(response)
+    return None
+
+writeToFile(bytesToSend)
