@@ -46,16 +46,13 @@ try:
         clientIP = "Client IP Address:{}".format(address)
         print(clientMsg)
         print(clientIP)
-        print()
-        print()
         # Sending a reply to client
         #UDPServerSocket.sendto(bytesToSend, address)
 finally:
     UDPServerSocket.close()
 
 # Output:
-# UDP server up and listening
-#
-# Message from Client:b"Hello UDP Server"
-#
-# Client IP Address:("127.0.0.1", 51696)
+# Message from Client:b'Line 8: 2019:02:26->> 14:16:15:    0:01:30   29   25   22   28   35   32\n'
+# Client IP Address:('91.204.85.6', 63099)
+# Message from Client:b'SNDT\x00\x00\x00\t\x05\x00\x04\x00\x04\x00\x04\x00\x05\x00\x06\x00'
+# Client IP Address:('91.204.85.19', 14000)
