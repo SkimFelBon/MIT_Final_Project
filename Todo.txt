@@ -1,5 +1,7 @@
 # TODO: build UDP server image
+  # TODO: Dockerfile for server
 # TODO: build UDP client image
+  # TODO: Dockerfile for client
   # TODO: client should send sample data in loop
 # TODO: test writes to sqlite3
 # TODO: make UDP server to work with MySQL database
