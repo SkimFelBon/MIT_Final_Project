@@ -2,9 +2,25 @@
 # build image
 docker build .
 
+# to create image
+docker build --tag=image_name .
+
 # build image with tag name
 docker build -t dude/man:v2 .
 docker build -t skim/mitfp:v1 .
+
+# to rename container (not image)
+docker rename [container name] cs50 (e.g. docker rename 7dbd85cec821 cs50)
+
+# to restart container
+docker restart [ContainerID]
+
+# to start container run
+docker start -a [ContainerID]
+
+# Jump to container
+docker exec -it webserver /bin/bash
+docker exec -it mit_final_project_v1 /bin/bash
 
 # Run image "ubuntu 18.04"
 docker run -it d131e0fa2585
@@ -18,6 +34,9 @@ docker run -it -v c:/MyPythonScripts/myGitHub/MIT_Final_Project:/mnt d1b046b09f5
 docker run -v c:/MyPythonScripts/myGitHub/MIT_Final_Project:/MIT_Final_Project -it d1b046b09f5e
 # install vim, inside ubuntu
 apt-get install vim
+
+# latest build order
+docker build --tag=project_heroku .
 
 # Run update to get a cash of local storages  (apt is a package manager)
 apt-get update
@@ -42,10 +61,6 @@ docker container rm webserver
 
 # Show running containers
 docker ps
-
-# Jump to container
-docker exec -it webserver /bin/bash
-docker exec -it mit_final_project_v1 /bin/bash
 
 # to run ide50 container
 docker run --privileged -e "IP=127.0.0.1" -e "PORT=8080" --name ide50 -d -p 5050:5050 -p 8080-8082:8080-8082 cs50/ide
