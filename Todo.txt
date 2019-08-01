@@ -1,0 +1,8 @@
+# TODO: build UDP server image
+# TODO: build UDP client image
+  # TODO: client should send sample data in loop
+# TODO: test writes to sqlite3
+# TODO: make UDP server to work with MySQL database
+# TODO: if db is ready start building flask app
+# TODO: ...
+# TODO: profit
