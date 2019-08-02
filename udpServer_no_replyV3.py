@@ -33,7 +33,6 @@ try:
         message = bytesAddressPair[0]
         address = bytesAddressPair[1]
         clientMsg = "Message from Client:{}".format(message)
-        # clientMsg = binascii.hexlify(message)
         clientIP = "Client IP Address:{}".format(address)
         print(clientMsg)
         print(clientIP)
