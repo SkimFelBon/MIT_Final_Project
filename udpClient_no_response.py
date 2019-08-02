@@ -4,7 +4,7 @@ import socket, json
 
 with open('config.json') as json_data_file:
         data = json.load(json_data_file)
-myIP = data['myServer']['PPPoeIP']
+myIP = data['myServer']['local_local']
 myPort = int(data['myServer']['localPort'])
 
 serverAddressPort = (myIP, myPort)
