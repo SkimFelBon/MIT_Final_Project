@@ -1,3 +1,6 @@
+# TODO: stop server after few request from sample.log
+# TODO: parse client response
+
 # TODO: build UDP server image
   # TODO: Dockerfile for server
 # TODO: build UDP client image
