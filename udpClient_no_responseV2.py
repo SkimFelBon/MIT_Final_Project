@@ -1,4 +1,4 @@
-# udpClientV4.py
+# udpClient_no_responseV2.py
 import socket, json
 """This client doesn't await reply from server"""
 
@@ -14,12 +14,10 @@ bufferSize = 1024
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 # Send to server using created UDP socket
 
-filepath = 'sample.log'
-with open(filepath) as fp:
-   for i, line in enumerate(fp):
-       msgFromClient = f"Line {i}: {line}"
-       bytesToSend = str.encode(msgFromClient)
-       UDPClientSocket.sendto(bytesToSend, serverAddressPort)
+
+with open("test.dat", "rb") as binary_file:
+    data = binary_file.read()
+    UDPClientSocket.sendto(data, serverAddressPort)
 
        #msgFromServer = UDPClientSocket.recvfrom(bufferSize)
 

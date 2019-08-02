@@ -8,16 +8,6 @@ import binascii
 # f.write(msg)
 # f.close()
 
-def writeToFile(response):
-    fileObj = open('response.txt','wb')
-    fileObj.write(response)
-    fileObj.close()
-    with open('response.txt','wb') as txt_data_file:
-        txt_data_file.write(response)
-    with open('responseByte','wb') as byte_data_file:
-        byte_data_file.write(response)
-    return None
-
 with open('config.json') as json_data_file:
         data = json.load(json_data_file)
 localIP = data['myServer']['local_local']

@@ -3,7 +3,7 @@ __pycache__/
 udpServer/
 pltENV/
 *.py[cod]
-
+udp.c
 # ignore a file type
 *.bak
 *.json

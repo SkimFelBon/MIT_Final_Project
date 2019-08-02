@@ -1,5 +1,5 @@
 # DONE: stop server after few request from sample.log
-# TODO: write Test version of client
+# DONE: write Test version of client
 # TODO: parse client response
 # TODO: build UDP server image
   # TODO: Dockerfile for server
