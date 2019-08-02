@@ -38,12 +38,12 @@ print("UDP server up and listening")
 # Listen for incoming datagrams
 i = 0
 try:
-    while i < 8:
+    while i < 9:
         bytesAddressPair = UDPServerSocket.recvfrom(bufferSize)
         message = bytesAddressPair[0]
         address = bytesAddressPair[1]
-        #clientMsg = "Message from Client:{}".format(message)
-        clientMsg = binascii.hexlify(message)
+        clientMsg = "Message from Client:{}".format(message)
+        # clientMsg = binascii.hexlify(message)
         clientIP = "Client IP Address:{}".format(address)
         print(clientMsg)
         print(clientIP)
