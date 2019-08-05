@@ -1,7 +1,7 @@
 # udpServerV4.py
 import socket, json
 import binascii
-from helpers import skipN, divide_array
+from helpers import skipN, average
 import time
 """This example doesn't send reply to client"""
 
@@ -38,9 +38,10 @@ try:
         print("Client IP Address:{}".format(address))
         # DONE: parse response
         listByte = list(message[-12:-1])
-        speedArray = divide_array(skipN(listByte, 1))
-        print(speedArray)
-        # TODO: calc everage speed per 10 sec
+        speedArray = skipN(listByte, 1)
+        # DONE: calc everage speed per 10 sec
+        print(average(speedArray))
+        # TODO: Write to db data
         # REWORK LATER increment here, just for simplicity during tests
         i+=1
 finally:

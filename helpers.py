@@ -14,16 +14,10 @@ def skipN(array, n, acc = None):
         # else skip number and decrease 'acc'
         return skipN(array[1:], n, acc - 1)
 
-def divide_array(speedArray):
-    newList = []
-    for i in range(len(speedArray)):
-        newList.append(speedArray[i] / 10)
-    return newList
-
 def average(speedArray):
     """Calculate average speed for 10sec"""
-    # result = sum(speedArray) / 1.67sec?
-    return []
+    result = (sum(speedArray) / len(speedArray)) / 10
+    return round(result, 2)
 
 
 """
@@ -33,8 +27,19 @@ that those speeds were traveled for the same amount of time.
 For example, if Ben drives 40 mph for 2 hours, and 60 mph for another 2 hours, what is his average speed for the entire trip?
 S = a+b/time
 S = 40+60/2
+OR
+If Ben traveled 50 mph for 3 hours, 60 mph for 2 hours,
+and 70 mph for 1 hour, what was his average speed for the entire trip?
+S = (s1t1 + s2t2 + s3t3) / t1 + t2 + t3
+S = (50*3+60*2+70*1) / (3+2+1)
+S = 340/6
+S = 56.67mph
 """
+
 """
 [0.5, 0.4, 0.4, 0.4, 0.5, 0.6]
-What i have 5 m/s for 1.67sec long 4 m/s for 1.67sec long and so on.
+[5, 4, 4, 4, 5, 6]
+What i have is 0.5 m/s for 1.67sec long 0.4 m/s for 1.67sec long and so on.
+TODO: Let's assume we have 5m/s, 4m/s and so on. How to convert this speed to km/h?
+
 """

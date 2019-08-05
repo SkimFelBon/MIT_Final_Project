@@ -1,11 +1,11 @@
 # DONE: stop server after few request from sample.log
 # DONE: write Test version of client
 # DONE: parse client response
-# TODO: calc everage speed per 10 sec
+# DONE: calc everage speed for period of time (10 sec)
 # TODO: how to parse data? What I want to store in db?
+
 # TODO: build first plot from data
 
-  # TODO: two bytes wind speed
 # TODO: build UDP server image
   # TODO: Dockerfile for server
 # TODO: build UDP client image
