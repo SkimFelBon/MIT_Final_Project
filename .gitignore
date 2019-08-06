@@ -1,10 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-udpServer/
-pltENV/
+ENValchemy/
 *.py[cod]
 udp.c
 # ignore a file type
 *.bak
 *.json
-*.db
