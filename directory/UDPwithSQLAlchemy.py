@@ -25,13 +25,16 @@ class Wind_speed(Base):
 
     Wind_date = relationship("Wind_date")
 
+## To clear db use drop_all and to recreate empty db use create_all
 # Base.metadata.bind = engine
+# Base.metadata.drop_all()
 # Base.metadata.create_all()
 
 Session = sessionmaker(bind=engine)
 ses = Session()
 w1 = Wind_date()
-s1 = Wind_speed(Speed=5)
 ses.add(w1)
+s1 = Wind_speed(Speed=5)
 ses.add(s1)
+
 ses.commit()

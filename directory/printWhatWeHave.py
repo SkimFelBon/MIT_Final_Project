@@ -1,7 +1,7 @@
 # printWhatWeHave.py
 import sqlite3
 
-conn = sqlite3.connect('wind_of_Change.db')
+conn = sqlite3.connect('wind_of_change.db')
 c = conn.cursor()
 c.execute("SELECT * FROM wind_speed")
 alltime = c.fetchall()
