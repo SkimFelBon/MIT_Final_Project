@@ -6,3 +6,4 @@ udp.c
 # ignore a file type
 *.bak
 *.json
+wind_of_change.db
