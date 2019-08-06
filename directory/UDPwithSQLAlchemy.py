@@ -30,9 +30,9 @@ class Wind_speed(Base):
     Wind_date = relationship("Wind_date")
 
 ## To clear db use drop_all and to recreate empty db use create_all
-Base.metadata.bind = engine
-Base.metadata.drop_all()
-Base.metadata.create_all()
+# Base.metadata.bind = engine
+# Base.metadata.drop_all()
+# Base.metadata.create_all()
 
 
 
