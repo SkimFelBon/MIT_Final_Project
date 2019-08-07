@@ -2,7 +2,7 @@
 # DONE: write Test version of client
 # DONE: parse client response
 # DONE: calc everage speed for period of time (10 sec)
-# TODO: how to parse data? What I want to store in db?
+# DONE: how to parse data? What I want to store in db?
 
 # TODO: build first plot from data
 
