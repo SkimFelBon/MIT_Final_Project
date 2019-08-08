@@ -19,7 +19,7 @@ def index():
 
 @app.route("/alldata")
 def deadEnd():
-    # TODO: simple case query db for all data
+    # DONE: simple case query db for all data
     myQuery = Wind_speed.query.all()
     app.logger.warning(f'Wind speed from db: {myQuery}')
     # TODO: query db
