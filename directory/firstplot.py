@@ -27,7 +27,7 @@ plt.xlabel('time, sec')
 plt.ylabel('Wind Speed, m/s')
 plt.plot(myTime,mySpeed)
 # Specify a rotation for the tick labels in degrees or with keywords.
-plt.xticks(rotation=45,horizontalalignment="right")
+plt.xticks(rotation=45, horizontalalignment="right")
 # Pad margins so that markers don't get clipped by the axes
 #plt.margins(0.5)
 # Tweak spacing to prevent clipping of tick-labels

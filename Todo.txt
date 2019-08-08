@@ -3,16 +3,19 @@
 # DONE: parse client response
 # DONE: calc everage speed for period of time (10 sec)
 # DONE: how to parse data? What I want to store in db?
+# DONE: build first plot from data
+# DONE: test writes to sqlite3
+# DONE: make UDP server to work with MySQL database
 
-# TODO: build first plot from data
-
-# TODO: build UDP server image
-  # TODO: Dockerfile for server
-# TODO: build UDP client image
-  # TODO: Dockerfile for client
-  # TODO: client should send sample data in loop
-# TODO: test writes to sqlite3
-# TODO: make UDP server to work with MySQL database
 # TODO: if db is ready start building flask app
+# TODO: make flask app to work with MySQL database
 # TODO: ...
 # TODO: profit
+
+
+# TODO: learn docker
+  # TODO: build UDP server image
+    # TODO: Dockerfile for server
+  # TODO: build UDP client image
+    # TODO: Dockerfile for client
+    # TODO: client should send sample data in loop
