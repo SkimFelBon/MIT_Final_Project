@@ -7,3 +7,4 @@ udp.c
 # ignore a file type
 *.bak
 *.json
+appENV/
