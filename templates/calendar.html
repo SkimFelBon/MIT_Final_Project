@@ -1,0 +1,19 @@
+{%extends "layout.html" %}
+
+{%block body %}
+  <body>
+    <h1>Calendar</h1>
+    <hr>
+    <div class="container">
+      <form class="" action="/calendar" method="post">
+        <h2>Range Datetime</h2>
+          <input type="text" id="rangeDate" name="DateRange" placeholder="Please select Date Range" data-input>
+        <h2>Time Picker</h2>
+        <input type="text" id="timePickerFrom" name="From" placeholder="Please select Time">
+        <input type="text" id="timePicker" name="To" placeholder="Please select Time">
+        <button class="btn btn-warning" title="submit" data-clear>Plot</button>
+      </form>
+    </div>
+    <img class="plot" src={{ImageLocation}} alt="wind plot">
+  </body>
+{% endblock %}
