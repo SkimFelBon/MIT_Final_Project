@@ -4,9 +4,9 @@ import sqlite3
 conn = sqlite3.connect('wind_of_change.db')
 c = conn.cursor()
 c.execute("SELECT * FROM wind_speed")
-alltime = c.fetchall()
-c.execute("SELECT * FROM winddate")
 allspeed = c.fetchall()
+c.execute("SELECT * FROM winddate")
+alltime = c.fetchall()
 conn.close()
 
 for i in alltime:

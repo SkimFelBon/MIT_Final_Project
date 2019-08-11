@@ -75,13 +75,19 @@ def calendar():
         ## ['2019', '08', '06']
         # TODO: make objects
         # datetime.datetime(2019,8,6), datetime.datetime(2019,8,6)
-        IntStartList = list(map(lambda i: int(i), StartListString))
-        IntEndList = list(map(lambda j: int(j), EndListString))
-        startDate = datetime.datetime(Start[0], Start[1], Start[2])
-        endDate = datetime.datetime(End[0], End[1], End[2])
-        qry = db.session.query(Wind_date).filter(Wind_date.Record_dt.between(startDate,endDate))
+        Start = list(map(lambda i: int(i), StartListString))
+        End = list(map(lambda j: int(j), EndListString))
+        intTimeFrom = list(map(lambda k: int(k), timeFrom.split(':')))
+        intTimeTo = list(map(lambda h: int(h), timeTo.split(':')))
+        startDate = datetime.datetime(Start[0], Start[1], Start[2], intTimeFrom[0], intTimeFrom[1])
+        endDate = datetime.datetime(End[0], End[1], End[2], intTimeTo[0], intTimeTo[1])
+
+        qry = db.session.query(Wind_date).filter(Wind_date.record_dt.between(startDate, endDate)).all()
+        #app.logger.warning(f"qry is: {qry}")
+        #app.logger.warning(f"ForeignKey is: {qry.windspeed_ref[0].speed}")
         for i in qry:
-            app.logger.warning(f"Contents: {i.Record_dt}\n")
+            app.logger.warning(f"Contents: {i.record_dt}\n")
+            app.logger.warning(f"ForeignKey is: {i.windspeed_ref[0].speed}\n\n")
         ImageLocation = "static/images/Figure_1.png"
         return render_template("calendar.html", ImageLocation=ImageLocation)
     ImageLocation = "https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg"

@@ -2,11 +2,8 @@ class Config(object):
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
-    SECRET_KEY = 'my-secret-key'
-    #SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
-    SQLALCHEMY_DATABASE_URI = "sqlite:///C:/MyPythonScripts/myGitHub/MIT_Final_Project/directory/wind_of_change.db"
-    UPLOAD_FOLDER = 'static/images'
-    FLASK_ADMIN_SWATCH = 'darkly'
+    SECRET_KEY = 'ithjghosrngosergneorgneorgnerog'
+    SQLALCHEMY_DATABASE_URI = "sqlite:///C:/MyPythonScripts/myGitHub/MIT_Final_Project/directory/fix_database.db"
 
 class ProductionConfig(Config):
     DEBUG = False
