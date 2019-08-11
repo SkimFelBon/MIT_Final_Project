@@ -50,7 +50,7 @@ def makePlot(myTime,mySpeed):
         out : list
             list of artists added
         """
-        out = ax.plot(data1, data2, **param_dict)
+        out = ax.plot_date(data1, data2, **param_dict)
         return out
     #years = mdates.YearLocator()   # every year
     minutes = mdates.MinuteLocator() # every minute
@@ -69,7 +69,7 @@ def makePlot(myTime,mySpeed):
     ax.xaxis.set_major_formatter(minutes_fmt)
     ax.xaxis.set_minor_locator(seconds)
 
-    my_plotter(ax, myTime, mySpeed, {'marker': 'x'})
+    my_plotter(ax, myTime, mySpeed, {'marker': 'o'})
     plt.title('Wind of Change')
     plt.ylabel('Wind Speed, m/s')
     plt.xlabel('time, min:sec')
