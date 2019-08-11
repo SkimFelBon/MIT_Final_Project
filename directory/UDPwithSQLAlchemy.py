@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 
 import socket, json
 import binascii
-from helpers import skipN, average
+from udphelpers import skipN, average
 
 engine = create_engine('sqlite:///wind_of_change.db')
 
@@ -67,12 +67,13 @@ try:
         speedArray = skipN(listByte, 1)
         # DONE: calc everage speed per 10 sec
         print(average(speedArray))
-        # TODO: Write to db data
+        # TODO: need to write date in to parent = w1, and fix classes
+        # example in one_to_many.py
         Session = sessionmaker(bind=engine)
         ses = Session()
         w1 = Wind_date()
         ses.add(w1)
-        s1 = Wind_speed(Speed=average(speedArray))
+        s1 = Wind_speed(Speed=average(speedArray), parent=??)
         ses.add(s1)
         ses.commit()
         # REWORK LATER increment here, just for simplicity during tests

@@ -3,6 +3,9 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 from flask import flash, redirect
+
+from helpers import read_calendar, makePlot
+
 ##import logging
 ##logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 ##logging.warning('is when this event was logged.')
@@ -47,7 +50,6 @@ def index():
 @app.route("/alldata")
 def alldata():
     # TODO: simple case query db for all data
-    # TODO: for POST request I need Calendar?
     ImageLocation = "static/images/Figure_1.png"
     return render_template("alldata.html", ImageLocation=ImageLocation)
 
@@ -68,27 +70,17 @@ def calendar():
         app.logger.warning(f"Date range from POST request is: {str(dateRange)}")
         app.logger.warning(f"Time from is :{timeFrom}")
         app.logger.warning(f"Time to is :{timeTo}")
-        StartEndlist = dateRange.split(' to ')
-        ## ['2019-08-06', '2019-08-14']
-        StartListString = StartEndlist[0].split('-')
-        EndListString = StartEndlist[1].split('-')
-        ## ['2019', '08', '06']
-        # TODO: make objects
-        # datetime.datetime(2019,8,6), datetime.datetime(2019,8,6)
-        Start = list(map(lambda i: int(i), StartListString))
-        End = list(map(lambda j: int(j), EndListString))
-        intTimeFrom = list(map(lambda k: int(k), timeFrom.split(':')))
-        intTimeTo = list(map(lambda h: int(h), timeTo.split(':')))
-        startDate = datetime.datetime(Start[0], Start[1], Start[2], intTimeFrom[0], intTimeFrom[1])
-        endDate = datetime.datetime(End[0], End[1], End[2], intTimeTo[0], intTimeTo[1])
-
+        # TODO: use parser.parse from dateutil in read_calendar
+        startDate, endDate = read_calendar(dateRange, timeFrom, timeTo)
+        # DONE: qry db using data from POST request
         qry = db.session.query(Wind_date).filter(Wind_date.record_dt.between(startDate, endDate)).all()
-        #app.logger.warning(f"qry is: {qry}")
-        #app.logger.warning(f"ForeignKey is: {qry.windspeed_ref[0].speed}")
+        myTime = []
+        mySpeed = []
         for i in qry:
-            app.logger.warning(f"Contents: {i.record_dt}\n")
-            app.logger.warning(f"ForeignKey is: {i.windspeed_ref[0].speed}\n\n")
-        ImageLocation = "static/images/Figure_1.png"
+            myTime.append(i.record_dt)
+            mySpeed.append(i.windspeed_ref[0].speed)
+        # DONE: build plot from queryData
+        ImageLocation = makePlot(myTime,mySpeed)
         return render_template("calendar.html", ImageLocation=ImageLocation)
     ImageLocation = "https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg"
     return render_template("calendar.html", ImageLocation=ImageLocation)
