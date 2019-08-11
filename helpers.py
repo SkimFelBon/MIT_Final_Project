@@ -70,7 +70,7 @@ def makePlot(myTime,mySpeed):
     ax.xaxis.set_minor_locator(seconds)
 
     my_plotter(ax, myTime, mySpeed, {'marker': 'o'})
-    plt.title('Wind of Change')
+    plt.title('Wind Speed vs Time')
     plt.ylabel('Wind Speed, m/s')
     plt.xlabel('time, min:sec')
     filelocation = "static/images/myfile2.png"

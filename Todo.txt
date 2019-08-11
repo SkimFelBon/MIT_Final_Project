@@ -10,6 +10,8 @@
 # TODO: if db is ready start building flask app
 # TODO: make flask app to work with sqlite3\MySQL database
 # TODO: simple task flask app  return all data plot from db
+# TODO: calculate Power kW
+# TODO: calculate area of rectangle(kWh) = height(power) * width(1/360hr)
 # TODO: ...
 # TODO: profit
 # TODO: learn docker
