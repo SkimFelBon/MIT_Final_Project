@@ -60,7 +60,7 @@ def alldata():
     return render_template("alldata.html", ImageLocation=ImageLocation)
 
 
-@app.route("/myPlot.png", methods=["GET", "POST"])
+@app.route("/calendar", methods=["GET", "POST"])
 def calendar():
     if request.method == "POST":
         dateRange = request.form.get('DateRange')
@@ -88,18 +88,17 @@ def calendar():
             mySpeed.append(i.windspeed_ref[0].speed)
         # DONE: build plot from queryData
         fig, ImageLocation = makePlot(myTime,mySpeed)
-        #return render_template("calendar.html", ImageLocation=ImageLocation)
-        return render_template("calendar.html")
-
-@app.route("/calendar", methods=["GET", "POST"])
-def send_png():
-    if fig is None:
-        return None
-    output = io.BytesIO()
-    FigureCanvas(fig).print_png(output)
-    response = make_response(output.getvalue())
-    response.headers.set('Content-Type','image/png')
-    return response
+        # return render_template("calendar.html", ImageLocation=ImageLocation)
+        output = io.BytesIO()
+        FigureCanvas(fig).print_png(output)
+        # How make_response works?
+        # "calendar.html", ImageLocation=ImageLocation)
+        ## https://stackoverflow.com/questions/28260499/how-to-display-imagegridfsproxy-in-html?lq=1
+        response = make_response(render_template("calendar.html"),output.getvalue())
+        response.headers.set('Content-Type','image/png')
+        pid = 'wtf'
+        response.headers.set('Content-Disposition', 'attachment', filename='%s.png' % pid)
+        return response
 
 
     ImageLocation = "https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg"
