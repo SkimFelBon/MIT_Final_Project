@@ -4,7 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 import datetime
 from flask import flash, redirect
 #================================
-import io
+from io import BytesIO
+from urllib.parse import quote
+from base64 import b64encode
+
 import random
 from flask import Response
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -88,18 +91,11 @@ def calendar():
             mySpeed.append(i.windspeed_ref[0].speed)
         # DONE: build plot from queryData
         fig, ImageLocation = makePlot(myTime,mySpeed)
-        # return render_template("calendar.html", ImageLocation=ImageLocation)
-        output = io.BytesIO()
-        FigureCanvas(fig).print_png(output)
-        # How make_response works?
-        # "calendar.html", ImageLocation=ImageLocation)
-        ## https://stackoverflow.com/questions/28260499/how-to-display-imagegridfsproxy-in-html?lq=1
-        response = make_response(render_template("calendar.html"),output.getvalue())
-        response.headers.set('Content-Type','image/png')
-        pid = 'wtf'
-        response.headers.set('Content-Disposition', 'attachment', filename='%s.png' % pid)
-        return response
-
+        png_output = BytesIO()
+        FigureCanvas(fig).print_png(png_output)
+        data = b64encode(png_output.getvalue()).decode('ascii')
+        data_url = 'data:image/png;base64,{}'.format(quote(data))
+        return render_template("calendar.html", img_data=data_url)
 
     ImageLocation = "https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg"
     return render_template("calendar.html", ImageLocation=ImageLocation)
@@ -108,7 +104,7 @@ def calendar():
 @app.route('/plot.png')
 def plot_png():
     fig = create_figure()
-    output = io.BytesIO()
+    output = BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype='image/png')
 
