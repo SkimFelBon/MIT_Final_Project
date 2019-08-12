@@ -1,9 +1,15 @@
 # app.py
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 from flask import flash, redirect
-
+#================================
+import io
+import random
+from flask import Response
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+#================================
 from helpers import read_calendar, makePlot
 
 ##import logging
@@ -53,7 +59,8 @@ def alldata():
     ImageLocation = "static/images/Figure_1.png"
     return render_template("alldata.html", ImageLocation=ImageLocation)
 
-@app.route("/calendar", methods=["GET", "POST"])
+
+@app.route("/myPlot.png", methods=["GET", "POST"])
 def calendar():
     if request.method == "POST":
         dateRange = request.form.get('DateRange')
@@ -80,10 +87,40 @@ def calendar():
             myTime.append(i.record_dt)
             mySpeed.append(i.windspeed_ref[0].speed)
         # DONE: build plot from queryData
-        ImageLocation = makePlot(myTime,mySpeed)
-        return render_template("calendar.html", ImageLocation=ImageLocation)
+        fig, ImageLocation = makePlot(myTime,mySpeed)
+        #return render_template("calendar.html", ImageLocation=ImageLocation)
+        return render_template("calendar.html")
+
+@app.route("/calendar", methods=["GET", "POST"])
+def send_png():
+    if fig is None:
+        return None
+    output = io.BytesIO()
+    FigureCanvas(fig).print_png(output)
+    response = make_response(output.getvalue())
+    response.headers.set('Content-Type','image/png')
+    return response
+
+
     ImageLocation = "https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg"
     return render_template("calendar.html", ImageLocation=ImageLocation)
+
+#===========================
+@app.route('/plot.png')
+def plot_png():
+    fig = create_figure()
+    output = io.BytesIO()
+    FigureCanvas(fig).print_png(output)
+    return Response(output.getvalue(), mimetype='image/png')
+
+def create_figure():
+    fig = Figure()
+    axis = fig.add_subplot(1, 1, 1)
+    xs = range(100)
+    ys = [random.randint(1, 50) for x in xs]
+    axis.plot(xs, ys)
+    return fig
+#===========================
 
 if __name__ == "__main__":
     app.run()

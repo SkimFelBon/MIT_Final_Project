@@ -6,10 +6,9 @@
 # DONE: build first plot from data
 # DONE: test writes to sqlite3
 # DONE: make UDP server to work with sqlite3/MySQL database
-
-# TODO: if db is ready start building flask app
-# TODO: make flask app to work with sqlite3\MySQL database
-# TODO: simple task flask app  return all data plot from db
+# DONE: make flask app to work with sqlite3\MySQL database
+# TODO: how to manage images
+# TODO: write more data to db
 # TODO: calculate Power kW
 # TODO: calculate area of rectangle(kWh) = height(power) * width(1/360hr)
 # TODO: calculate sum(area)
