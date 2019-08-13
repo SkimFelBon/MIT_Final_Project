@@ -1,9 +1,18 @@
 # app.py
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 from flask import flash, redirect
+#================================
+from io import BytesIO
+from urllib.parse import quote
+from base64 import b64encode
 
+import random
+from flask import Response
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+from matplotlib.figure import Figure
+#================================
 from helpers import read_calendar, makePlot
 
 ##import logging
@@ -53,6 +62,7 @@ def alldata():
     ImageLocation = "static/images/Figure_1.png"
     return render_template("alldata.html", ImageLocation=ImageLocation)
 
+
 @app.route("/calendar", methods=["GET", "POST"])
 def calendar():
     if request.method == "POST":
@@ -67,23 +77,45 @@ def calendar():
             timeFrom = '00:00'
         if not timeTo:
             timeTo = '00:00'
-        app.logger.warning(f"Date range from POST request is: {str(dateRange)}")
-        app.logger.warning(f"Time from is :{timeFrom}")
-        app.logger.warning(f"Time to is :{timeTo}")
         # TODO: use parser.parse from dateutil in read_calendar
         startDate, endDate = read_calendar(dateRange, timeFrom, timeTo)
         # DONE: qry db using data from POST request
         qry = db.session.query(Wind_date).filter(Wind_date.record_dt.between(startDate, endDate)).all()
+        if len(qry) is 0:
+            msg = f"No records for this date range"
+            flash(msg, "alert-warning")
+            return redirect("/calendar")
         myTime = []
         mySpeed = []
         for i in qry:
             myTime.append(i.record_dt)
             mySpeed.append(i.windspeed_ref[0].speed)
         # DONE: build plot from queryData
-        ImageLocation = makePlot(myTime,mySpeed)
-        return render_template("calendar.html", ImageLocation=ImageLocation)
-    ImageLocation = "https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg"
-    return render_template("calendar.html", ImageLocation=ImageLocation)
+        fig, ImageLocation = makePlot(myTime,mySpeed)
+        png_output = BytesIO()
+        FigureCanvas(fig).print_png(png_output)
+        data = b64encode(png_output.getvalue()).decode('ascii')
+        data_url = 'data:image/png;base64,{}'.format(quote(data))
+        return render_template("calendar.html", img_data=data_url)
+
+    return render_template("calendar.html")
+
+#===========================
+@app.route('/plot.png')
+def plot_png():
+    fig = create_figure()
+    output = BytesIO()
+    FigureCanvas(fig).print_png(output)
+    return Response(output.getvalue(), mimetype='image/png')
+
+def create_figure():
+    fig = Figure()
+    axis = fig.add_subplot(1, 1, 1)
+    xs = range(100)
+    ys = [random.randint(1, 50) for x in xs]
+    axis.plot(xs, ys)
+    return fig
+#===========================
 
 if __name__ == "__main__":
     app.run()
