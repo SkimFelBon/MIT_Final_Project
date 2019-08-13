@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 
 import socket, json
 import binascii
-from helpers import skipN, average
+
 
 import pickle
 engine = create_engine('sqlite:///fix_database.db')

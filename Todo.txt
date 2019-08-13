@@ -7,7 +7,7 @@
 # DONE: test writes to sqlite3
 # DONE: make UDP server to work with sqlite3/MySQL database
 # DONE: make flask app to work with sqlite3\MySQL database
-# TODO: how to manage images
+# DONE: how to manage images
 # TODO: write more data to db
 # TODO: calculate Power kW
 # TODO: calculate area of rectangle(kWh) = height(power) * width(1/360hr)

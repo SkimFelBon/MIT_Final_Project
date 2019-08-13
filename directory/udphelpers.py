@@ -18,3 +18,17 @@ def average(speedArray):
     """Calculate average speed for 10sec"""
     result = (sum(speedArray) / len(speedArray)) / 10
     return round(result, 2)
+
+def skipSpace(text, acc = None):
+    if acc is None:
+        acc = 0
+    speedList = []
+    """ this function skip's space and append's integers to list"""
+    for i in text:
+        #if acc >= 6:
+        #    break
+        if i.isspace():
+            continue
+        speedList.append(int(i))
+        #acc+=1
+    return speedList
