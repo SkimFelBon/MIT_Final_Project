@@ -77,13 +77,14 @@ def calendar():
             timeFrom = '00:00'
         if not timeTo:
             timeTo = '00:00'
-        app.logger.warning(f"Date range from POST request is: {str(dateRange)}")
-        app.logger.warning(f"Time from is :{timeFrom}")
-        app.logger.warning(f"Time to is :{timeTo}")
         # TODO: use parser.parse from dateutil in read_calendar
         startDate, endDate = read_calendar(dateRange, timeFrom, timeTo)
         # DONE: qry db using data from POST request
         qry = db.session.query(Wind_date).filter(Wind_date.record_dt.between(startDate, endDate)).all()
+        if len(qry) is 0:
+            msg = f"No records for this date range"
+            flash(msg, "alert-warning")
+            return redirect("/calendar")
         myTime = []
         mySpeed = []
         for i in qry:
@@ -97,8 +98,7 @@ def calendar():
         data_url = 'data:image/png;base64,{}'.format(quote(data))
         return render_template("calendar.html", img_data=data_url)
 
-    ImageLocation = "https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg"
-    return render_template("calendar.html", ImageLocation=ImageLocation)
+    return render_template("calendar.html")
 
 #===========================
 @app.route('/plot.png')

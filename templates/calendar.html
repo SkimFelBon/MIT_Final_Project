@@ -14,6 +14,8 @@
         <button class="btn btn-warning" title="submit" data-clear>Plot</button>
       </form>
     </div>
-    <img class="plot" src="data:image/png;{{img_data}}" alt="my plotpng">
+    {% if img_data %}
+      <img class="plot" src="data:image/png;{{img_data}}" alt="my plotpng">
+    {% endif %}
   </body>
 {% endblock %}
