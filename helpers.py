@@ -52,27 +52,27 @@ def makePlot(myTime,mySpeed):
         """
         out = ax.plot_date(data1, data2, **param_dict)
         return out
-    #years = mdates.YearLocator()   # every year
-    minutes = mdates.MinuteLocator() # every minute
-    #months = mdates.MonthLocator()  # every month
-    seconds = mdates.SecondLocator() # every second
-    #years_fmt = mdates.DateFormatter('%Y')
-    minutes_fmt = mdates.DateFormatter('%M:%S')
+    years = mdates.YearLocator()   # every year
+    # minutes = mdates.MinuteLocator() # every minute
+    months = mdates.MonthLocator()  # every month
+    # seconds = mdates.SecondLocator() # every second
+    years_fmt = mdates.DateFormatter('%Y')
+    # minutes_fmt = mdates.DateFormatter('%M:%S')
 
 
     # which you would then use as:
-    data1, data2, data3, data4 = np.random.randn(4, 100)
+    # data1, data2, data3, data4 = np.random.randn(4, 100)
     fig, ax = plt.subplots(1, 1)
 
     # format the ticks
-    ax.xaxis.set_major_locator(minutes)
-    ax.xaxis.set_major_formatter(minutes_fmt)
-    ax.xaxis.set_minor_locator(seconds)
+    # ax.xaxis.set_major_locator(minutes)
+    # ax.xaxis.set_major_formatter(minutes_fmt)
+    # ax.xaxis.set_minor_locator(seconds)
 
     my_plotter(ax, myTime, mySpeed, {'marker': 'o'})
     plt.title('Wind Speed vs Time')
     plt.ylabel('Wind Speed, m/s')
-    plt.xlabel('time, min:sec')
+    plt.xlabel('time')
     filelocation = "static/images/myfile2.png"
     # plt.savefig(filelocation)
     return fig, filelocation

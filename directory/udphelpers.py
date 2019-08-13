@@ -1,5 +1,17 @@
 # udphelpers.py
 
+def findSpeed(text):
+    import re
+    speedRegex = re.compile('''\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\n?
+                            ''',re.VERBOSE)
+    speedList = []
+    group = speedRegex.findall(text)
+    for i in range(len(group[0])):
+        speedList.append(int(group[0][i]))
+    return speedList
+
+
+
 def skipN(array, n, acc = None):
     if array is None:
         array = []

@@ -3,7 +3,8 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'ithjghosrngosergneorgneorgnerog'
-    SQLALCHEMY_DATABASE_URI = "sqlite:///C:/MyPythonScripts/myGitHub/MIT_Final_Project/directory/fix_database.db"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///C:/MyPythonScripts/myGitHub/MIT_Final_Project/directory/newDataBase.db"
+    # SQLALCHEMY_DATABASE_URI = "sqlite:///C:/MyPythonScripts/myGitHub/MIT_Final_Project/directory/fix_database.db"
 
 class ProductionConfig(Config):
     DEBUG = False

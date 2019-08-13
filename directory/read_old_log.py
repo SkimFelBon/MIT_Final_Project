@@ -5,9 +5,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, DateTime, Float
 from sqlalchemy.orm import sessionmaker, relationship
 
-from udphelpers import average
+from udphelpers import average, findSpeed
 
-engine = create_engine('sqlite:///wind_of_change.db')
+engine = create_engine('sqlite:///newDataBase.db')
 
 Base = declarative_base()
 
@@ -32,18 +32,17 @@ ses = Session()
 
 path = "C:/MyPythonScripts/myGitHub/Winter/tests/winter.log"
 
-with open(path,'r') as f:
+with open('winter.log','r') as f:
     for line in f:
         # DONE make DateTime object
-        print(line)
         rowDate = line[0:10] + ' ' + line[14:22]
         dateObj = datetime.datetime.strptime(rowDate,"%Y:%m:%d %H:%M:%S")
-        # DONE calculate average speed
-        speed = line[37:64]
+        # TODO calculate average speed
         # this one dosn't work
-            #speedArrayStr = speed.split('  ')
-            #SpeedArrayInt = list(map(lambda x: int(x), speedArrayStr))
-        SpeedArrayInt = skipSpace(speed)
+            # speed = line[37:64]
+            # speedArrayStr = speed.split('  ')
+            # SpeedArrayInt = list(map(lambda x: int(x), speedArrayStr))
+        SpeedArrayInt = findSpeed(line)
         aSpeed = average(SpeedArrayInt)
         # TODO write to db
         w1 = Wind_date(record_dt = dateObj)
