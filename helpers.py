@@ -50,7 +50,7 @@ def makePlot(myTime,mySpeed):
         out : list
             list of artists added
         """
-        out = ax.plot_date(data1, data2, **param_dict)
+        out = ax.plot(data1, data2, **param_dict)
         return out
     years = mdates.YearLocator()   # every year
     # minutes = mdates.MinuteLocator() # every minute

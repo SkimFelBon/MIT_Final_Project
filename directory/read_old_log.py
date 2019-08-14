@@ -32,7 +32,7 @@ ses = Session()
 
 path = "C:/MyPythonScripts/myGitHub/Winter/tests/winter.log"
 
-with open('winter.log','r') as f:
+with open(path,'r') as f:
     for line in f:
         # DONE make DateTime object
         rowDate = line[0:10] + ' ' + line[14:22]

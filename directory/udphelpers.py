@@ -1,6 +1,7 @@
 # udphelpers.py
 
 def findSpeed(text):
+    """ Produce array of speeds, from line in winter.log file"""
     import re
     speedRegex = re.compile('''\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\n?
                             ''',re.VERBOSE)
@@ -13,6 +14,7 @@ def findSpeed(text):
 
 
 def skipN(array, n, acc = None):
+    """Skip elements in array with step n"""
     if array is None:
         array = []
     if acc is None:
@@ -32,10 +34,10 @@ def average(speedArray):
     return round(result, 2)
 
 def skipSpace(text, acc = None):
+    """ this function skip's space and append's integers to list"""
     if acc is None:
         acc = 0
     speedList = []
-    """ this function skip's space and append's integers to list"""
     for i in text:
         #if acc >= 6:
         #    break

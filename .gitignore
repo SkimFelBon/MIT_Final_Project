@@ -9,6 +9,5 @@ udp.c
 *.json
 appENV/
 winter.log
-newDataBase.db
 *.db
-directory/wind_of_change.db
+*.db-journal
