@@ -14,6 +14,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 #================================
 from helpers import read_calendar, makePlot
+import raster_axes
 
 ##import logging
 ##logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
@@ -56,11 +57,48 @@ def index():
     ImageLocation = "static/images/Figure_1.png"
     return render_template("index.html", ImageLocation=ImageLocation)
 
-@app.route("/alldata")
+@app.route("/alldata", methods=["GET", "POST"])
 def alldata():
     # TODO: simple case query db for all data
-    ImageLocation = "static/images/Figure_1.png"
-    return render_template("alldata.html", ImageLocation=ImageLocation)
+    if request.method == "POST":
+        dateRange = request.form.get('DateRange')
+        timeFrom = request.form.get('From')
+        timeTo = request.form.get('To')
+        if not dateRange:
+            dateRange = f"Please choose Date Range!"
+            flash(dateRange, "alert-warning")
+            return redirect("/calendar")
+        if not timeFrom:
+            timeFrom = '00:00'
+        if not timeTo:
+            timeTo = '00:00'
+        startDate, endDate = read_calendar(dateRange, timeFrom, timeTo)
+        qry = db.session.query(Wind_date).filter(Wind_date.record_dt.between(startDate, endDate)).all()
+        if len(qry) is 0:
+            msg = f"No records for this date range"
+            flash(msg, "alert-warning")
+            return redirect("/calendar")
+        myTime = []
+        mySpeed = []
+        app.logger.warning(f"Successfully deducted table")
+        for i in qry:
+            myTime.append(i.record_dt.fromtimestamp(0))
+            mySpeed.append(i.windspeed_ref[0].speed)
+        app.logger.warning(f"Stuck in for loop?")
+        # TODO: build plot from queryData
+        # fig = plt.figure()
+        # ax = RasterAxes(fig, [0.1, 0.1, 0.8, 0.8])
+        # fig.add_axes(ax)
+        import numpy as np
+        x = np.array(myTime)
+        y = np.array(mySpeed)
+        app.logger.warning(f"myTime[0]: {myTime[0]}\n")
+        app.logger.warning(f"type(x): {type(x)}\n")
+        app.logger.warning(f"len(x): {len(x)}\n")
+        ImageLocation = "static/images/Figure_1.png"
+        return render_template("alldata.html", ImageLocation=ImageLocation)
+
+    return render_template("alldata.html")
 
 
 @app.route("/calendar", methods=["GET", "POST"])

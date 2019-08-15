@@ -27,7 +27,7 @@ def makePlot(myTime,mySpeed):
     import matplotlib.dates as mdates
     from dateutil import parser
 
-    def my_plotter(ax, data1, data2, param_dict):
+    def my_plotter(ax, data1, data2):
         """
         A helper function to make a graph
 
@@ -50,7 +50,7 @@ def makePlot(myTime,mySpeed):
         out : list
             list of artists added
         """
-        out = ax.plot(data1, data2, **param_dict)
+        out = ax.scatter(data1, data2)
         return out
     years = mdates.YearLocator()   # every year
     # minutes = mdates.MinuteLocator() # every minute
@@ -69,7 +69,7 @@ def makePlot(myTime,mySpeed):
     # ax.xaxis.set_major_formatter(minutes_fmt)
     # ax.xaxis.set_minor_locator(seconds)
 
-    my_plotter(ax, myTime, mySpeed, {'marker': 'o'})
+    my_plotter(ax, myTime, mySpeed)
     plt.title('Wind Speed vs Time')
     plt.ylabel('Wind Speed, m/s')
     plt.xlabel('time')

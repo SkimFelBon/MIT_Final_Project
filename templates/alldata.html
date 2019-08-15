@@ -1,5 +1,25 @@
 {%extends "layout.html" %}
 
 {%block body %}
-<h1>All Data</h1>
+  <body>
+    <h1>All Data</h1>
+    <hr>
+    <div class="container">
+      <form class="" action="/alldata" method="post">
+        <h2>Range Datetime</h2>
+          <input type="text" id="rangeDate" name="DateRange" placeholder="Please select Date Range" data-input>
+        <h2>Optional choose time</h2>
+        <input type="text" id="timePickerFrom" name="From" placeholder="Please select Time">
+        <input type="text" id="timePicker" name="To" placeholder="Please select Time">
+        <button class="btn btn-warning" title="submit" data-clear>Plot</button>
+      </form>
+    </div>
+    {% if img_data %}
+      <img class="plot" src="data:image/png;{{img_data}}" alt="my plotpng">
+    {% endif %}
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+  </body>
 {% endblock %}
